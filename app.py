@@ -749,13 +749,23 @@ with tab2:
         "Masukkan teks",
         height=120,
         placeholder=(
-            "Contoh: terima kasih sudah live..."
+            "Contoh: Semangat Mainnya"
         )
     )
-
+    st.markdown(
+    """
+    <style>
+    div.stButton > button {
+        float: right;
+        width: 110px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
     if st.button(
-        " Analisis",
+        "Analisis",
         type="primary",
         use_container_width=True
     ):

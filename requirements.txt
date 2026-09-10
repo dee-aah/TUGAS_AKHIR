@@ -6,3 +6,6 @@ matplotlib
 seaborn
 google-api-python-client
 streamlit-autorefresh
+torch
+transformers
+streamlit

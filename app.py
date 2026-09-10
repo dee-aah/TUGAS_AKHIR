@@ -459,8 +459,32 @@ with tab1:
             "di Streamlit Secrets."
         )
 
+    st.markdown("""
+    <style>
 
-    col1, col2 = st.columns(2)
+    div[data-testid="stHorizontalBlock"] div:nth-child(1) button {
+        background-color: #00c853;
+        color: white;
+        border: none;
+        flex-direction: row !important;
+        width: 100% !important;
+        
+    }
+
+    div[data-testid="stHorizontalBlock"] div:nth-child(2) button {
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    </style>
+    """, unsafe_allow_html=True)
+    col1, col2 = st.columns( 
+    [1, 1],
+    gap="small"
+    )
 
 
     with col1:

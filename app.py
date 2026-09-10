@@ -15,13 +15,13 @@ st.set_page_config(
 )
 
 MODEL_PATH = "models"
-MAX_LENGTH = 64
+MAX_LENGTH = 32
 REFRESH_INTERVAL = 5000
 
 LABEL_MAP = {
     0: "Normal",
-    1: "Toxic",
-    2: "Spam"
+    1: "Spam",
+    2: "Toxic"
 }
 
 device = torch.device(

@@ -1186,9 +1186,9 @@ def show_summary(
                  **KONDISI AMAN**
 
                 Live Chat didominasi pesan positif dan relevan.
-                **Rekomendasi
-                - Live chat dapat berjalan normal"
-                - Tetap lakukan pemantauan rutin"
+                **Rekomendasi:**
+                - Live chat dapat berjalan normal
+                - Tetap lakukan pemantauan rutin
                 """
             )
 

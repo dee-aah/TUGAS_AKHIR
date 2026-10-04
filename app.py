@@ -540,7 +540,6 @@ with tab1:
 
         st.info(
             "⏱ Monitoring sedang berjalan. "
-            "Tidak ada batas maksimal durasi."
         )
 
         video_id = extract_video_id(

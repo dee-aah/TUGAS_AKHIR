@@ -65,9 +65,6 @@ def init_state():
     if "next_page_token" not in st.session_state:
         st.session_state.next_page_token = None
 
-    if "start_time" not in st.session_state:
-        st.session_state.start_time = None
-
     if "all_comments" not in st.session_state:
         st.session_state.all_comments = pd.DataFrame(
             columns=[
@@ -422,9 +419,9 @@ st.markdown(
 
 tab1, tab2, tab3 = st.tabs(
     [
-        "🎥 Live Monitor",
-        "🔍 Deteksi Manual",
-        "📁 Upload File"
+        " Live Monitor",
+        " Deteksi Manual",
+        " Upload File"
     ]
 )
 
@@ -433,7 +430,7 @@ tab1, tab2, tab3 = st.tabs(
 with tab1:
 
     st.subheader(
-        "🎥 YouTube Live Monitor"
+        " YouTube Live Monitor"
     )
 
     youtube_url = st.text_input(
@@ -510,10 +507,6 @@ with tab1:
 
                 st.session_state.is_running = True
 
-                st.session_state.start_time = (
-                    datetime.now()
-                )
-
                 st.session_state.next_page_token = None
 
                 st.session_state.all_comments = (
@@ -545,35 +538,9 @@ with tab1:
 
     if st.session_state.is_running:
 
-        elapsed = (
-            datetime.now()
-            - st.session_state.start_time
-        )
-
-        max_duration = timedelta(
-            minutes=20
-        )
-
-        if elapsed >= max_duration:
-
-            st.session_state.is_running = False
-
-            st.warning(
-                "⏱ Monitoring 20 menit telah selesai."
-            )
-
-            st.rerun()
-
-
-        remaining = (
-            max_duration
-            - elapsed
-        )
-
         st.info(
-            f"⏱ Durasi: "
-            f"{str(elapsed).split('.')[0]}"
-            f" / 20:00"
+            "⏱ Monitoring sedang berjalan. "
+            "Tidak ada batas maksimal durasi."
         )
 
         video_id = extract_video_id(
@@ -603,7 +570,7 @@ with tab1:
             else:
 
                 st.success(
-                    f"🎥 {title}"
+                    f" {title}"
                 )
 
                 messages, next_token = (
@@ -673,7 +640,6 @@ with tab1:
                 )
 
     # STATISTIK
-   
 
     df_live = (
         st.session_state.all_comments
@@ -872,7 +838,7 @@ with tab2:
 with tab3:
 
     st.subheader(
-        "📁 Upload CSV / Excel"
+        " Upload CSV / Excel"
     )
 
     uploaded_file = st.file_uploader(
